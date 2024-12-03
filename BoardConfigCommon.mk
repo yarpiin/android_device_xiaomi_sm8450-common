@@ -210,9 +210,6 @@ BOARD_EXCLUDE_KERNEL_FROM_RECOVERY_IMAGE := true
 # RIL
 ENABLE_VENDOR_RIL_SERVICE := true
 
-# Security patch level
-VENDOR_SECURITY_PATCH := 2024-10-01
-
 # Sepolicy
 include device/qcom/sepolicy_vndr/SEPolicy.mk
 
