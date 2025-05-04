@@ -9,8 +9,6 @@ include vendor/xiaomi/sm8450-common/BoardConfigVendor.mk
 
 COMMON_PATH := device/xiaomi/sm8450-common
 
-SELINUX_IGNORE_NEVERALLOWS := true
-
 # A/B
 AB_OTA_PARTITIONS += \
     boot \
