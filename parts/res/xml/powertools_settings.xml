@@ -44,7 +44,7 @@
             android:title="@string/gpu_max_frequency"
             android:entries="@array/gpu_frequency_entries"
             android:entryValues="@array/gpu_frequency_values"
-            android:defaultValue="580000000"
+            android:defaultValue="599000000"
             android:summary="%s" />
 
     </PreferenceCategory>
@@ -66,7 +66,7 @@
             android:title="Min Frequency"
             android:entries="@array/cpu_little_freq_entries"
             android:entryValues="@array/cpu_little_freq_values"
-            android:defaultValue="300000"
+            android:defaultValue="307200"
             android:summary="%s" />
 
         <ListPreference
@@ -74,7 +74,7 @@
             android:title="Max Frequency"
             android:entries="@array/cpu_little_freq_entries"
             android:entryValues="@array/cpu_little_freq_values"
-            android:defaultValue="1804800"
+            android:defaultValue="1785600"
             android:summary="%s" />
 
         <ListPreference
@@ -105,7 +105,7 @@
             android:title="Max Frequency"
             android:entries="@array/cpu_big_freq_entries"
             android:entryValues="@array/cpu_big_freq_values"
-            android:defaultValue="2496000"
+            android:defaultValue="2419200"
             android:summary="%s" />
 
         <ListPreference
@@ -128,7 +128,7 @@
             android:title="Min Frequency"
             android:entries="@array/cpu_prime_freq_entries"
             android:entryValues="@array/cpu_prime_freq_values"
-            android:defaultValue="787200"
+            android:defaultValue="806400"
             android:summary="%s" />
 
         <ListPreference
@@ -136,7 +136,7 @@
             android:title="Max Frequency"
             android:entries="@array/cpu_prime_freq_entries"
             android:entryValues="@array/cpu_prime_freq_values"
-            android:defaultValue="2918400"
+            android:defaultValue="2841600"
             android:summary="%s" />
 
         <ListPreference

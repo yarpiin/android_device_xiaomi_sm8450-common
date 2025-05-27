@@ -47,7 +47,7 @@ public class PowertoolsSettingsFragment extends PreferenceFragmentCompat
     private String[] mGpuFreqEntries;
     private String[] mGpuFreqValues;
     private static final String GPU_DEFAULT_MIN = "220000000";
-    private static final String GPU_DEFAULT_MAX = "580000000";
+    private static final String GPU_DEFAULT_MAX = "818000000";
 
     // CPU settings keys
     private static final String KEY_CPU_ENABLE = "cpu_enable";
@@ -61,14 +61,14 @@ public class PowertoolsSettingsFragment extends PreferenceFragmentCompat
     private static final String KEY_CPU_PRIME_MAX_FREQ = "cpu_prime_max_frequency";
     private static final String KEY_CPU_PRIME_GOVERNOR = "cpu_prime_governor";
 
-    private static final String CPU_LITTLE_DEFAULT_MIN = "300000";
-    private static final String CPU_LITTLE_DEFAULT_MAX = "1804800";
+    private static final String CPU_LITTLE_DEFAULT_MIN = "307200";
+    private static final String CPU_LITTLE_DEFAULT_MAX = "1785600";
     private static final String CPU_LITTLE_DEFAULT_GOV = "walt";
     private static final String CPU_BIG_DEFAULT_MIN = "633600";
-    private static final String CPU_BIG_DEFAULT_MAX = "2496000";
+    private static final String CPU_BIG_DEFAULT_MAX = "2419200";
     private static final String CPU_BIG_DEFAULT_GOV = "walt";
-    private static final String CPU_PRIME_DEFAULT_MIN = "787200";
-    private static final String CPU_PRIME_DEFAULT_MAX = "2918400";
+    private static final String CPU_PRIME_DEFAULT_MIN = "806400";
+    private static final String CPU_PRIME_DEFAULT_MAX = "2841600";
     private static final String CPU_PRIME_DEFAULT_GOV = "walt";
 
     // CPU Little Preferences
