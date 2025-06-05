@@ -202,7 +202,7 @@ on property:vendor.post_boot.parsed=1
 on property:sys.perf_mode_active=3
     write /sys/devices/system/cpu/qcom_lpm/parameters/sleep_disabled 1
 
-    write /sys/class/thermal/thermal_message/sconfig 10
+    write /sys/class/thermal/thermal_message/sconfig 13
 
     write /sys/devices/system/cpu/cpufreq/policy0/walt/down_rate_limit_us 0
     write /sys/devices/system/cpu/cpufreq/policy0/walt/up_rate_limit_us 0
@@ -216,7 +216,7 @@ on property:sys.perf_mode_active=3
 on property:sys.perf_mode_active=2
     write /sys/devices/system/cpu/qcom_lpm/parameters/sleep_disabled 1
 
-    write /sys/class/thermal/thermal_message/sconfig 23
+    write /sys/class/thermal/thermal_message/sconfig 15
 
     write /sys/devices/system/cpu/cpufreq/policy0/walt/down_rate_limit_us 20000
     write /sys/devices/system/cpu/cpufreq/policy0/walt/up_rate_limit_us 500
@@ -229,7 +229,7 @@ on property:sys.perf_mode_active=2
 on property:sys.perf_mode_active=1
     write /sys/devices/system/cpu/qcom_lpm/parameters/sleep_disabled 0
 
-    write /sys/class/thermal/thermal_message/sconfig 0
+    write /sys/class/thermal/thermal_message/sconfig 7
 
     write /sys/devices/system/cpu/cpufreq/policy0/walt/down_rate_limit_us 5000
     write /sys/devices/system/cpu/cpufreq/policy0/walt/up_rate_limit_us 500
@@ -242,7 +242,7 @@ on property:sys.perf_mode_active=1
 on property:sys.perf_mode_active=0
     write /sys/devices/system/cpu/qcom_lpm/parameters/sleep_disabled 0
 
-    write /sys/class/thermal/thermal_message/sconfig 3
+    write /sys/class/thermal/thermal_message/sconfig 8
 
     write /sys/devices/system/cpu/cpufreq/policy0/walt/down_rate_limit_us 40000
     write /sys/devices/system/cpu/cpufreq/policy0/walt/up_rate_limit_us 20000
@@ -250,6 +250,19 @@ on property:sys.perf_mode_active=0
     write /sys/devices/system/cpu/cpufreq/policy4/walt/up_rate_limit_us 20000
     write /sys/devices/system/cpu/cpufreq/policy7/walt/down_rate_limit_us 20000
     write /sys/devices/system/cpu/cpufreq/policy7/walt/up_rate_limit_us 10000
+
+# Eco Mode: sys.perf_mode_active=4
+on property:sys.perf_mode_active=4
+    write /sys/devices/system/cpu/qcom_lpm/parameters/sleep_disabled 0
+
+    write /sys/class/thermal/thermal_message/sconfig 4
+
+    write /sys/devices/system/cpu/cpufreq/policy0/walt/down_rate_limit_us 500
+    write /sys/devices/system/cpu/cpufreq/policy0/walt/up_rate_limit_us 20000
+    write /sys/devices/system/cpu/cpufreq/policy4/walt/down_rate_limit_us 500
+    write /sys/devices/system/cpu/cpufreq/policy4/walt/up_rate_limit_us 20000
+    write /sys/devices/system/cpu/cpufreq/policy7/walt/down_rate_limit_us 0
+    write /sys/devices/system/cpu/cpufreq/policy7/walt/up_rate_limit_us 20000
 
 # GPU Settings
 on property:persist.sys.parts.gpu.min_frequency=*

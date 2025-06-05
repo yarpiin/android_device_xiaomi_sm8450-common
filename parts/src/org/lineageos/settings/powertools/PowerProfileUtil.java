@@ -55,13 +55,15 @@ public class PowerProfileUtil {
     public static final int MODE_BALANCE = 0;
     public static final int MODE_GAMING = 1;
     public static final int MODE_PERFORMANCE = 2;
-    public static final int MODE_BATTERY_SAVER = 3;
-    public static final int MODE_UNKNOWN = 4;
+    public static final int MODE_ECO = 3;
+    public static final int MODE_BATTERY_SAVER = 4;
+    public static final int MODE_UNKNOWN = 5;
 
-    private static final int POWERPROFILE_BALANCE = 0;
-    private static final int POWERPROFILE_GAMING = 10;
-    private static final int POWERPROFILE_PERFORMANCE = 23;
-    private static final int POWERPROFILE_BATTERY_SAVER = 3;
+    private static final int POWERPROFILE_BALANCE = 7;
+    private static final int POWERPROFILE_GAMING = 13;
+    private static final int POWERPROFILE_PERFORMANCE = 15;
+    private static final int POWERPROFILE_ECO = 4;
+    private static final int POWERPROFILE_BATTERY_SAVER = 8;
 
     private Context mContext;
     private SharedPreferences mSharedPrefs;
@@ -81,6 +83,7 @@ public class PowerProfileUtil {
                 mContext.getString(R.string.powerprofile_mode_balance),
                 mContext.getString(R.string.powerprofile_mode_gaming),
                 mContext.getString(R.string.powerprofile_mode_performance),
+                mContext.getString(R.string.powerprofile_mode_eco),
                 mContext.getString(R.string.powerprofile_mode_battery_saver),
                 mContext.getString(R.string.powerprofile_mode_unknown)
         };
@@ -107,6 +110,8 @@ public class PowerProfileUtil {
                     return MODE_GAMING;
                 case POWERPROFILE_PERFORMANCE:
                     return MODE_PERFORMANCE;
+                case POWERPROFILE_ECO:
+                    return MODE_ECO;
                 case POWERPROFILE_BATTERY_SAVER:
                     return MODE_BATTERY_SAVER;
                 default:
@@ -135,6 +140,10 @@ public class PowerProfileUtil {
                 thermalValue = POWERPROFILE_PERFORMANCE;
                 setPerformanceModeActive(2);
                 break;
+            case MODE_ECO:
+               thermalValue = POWERPROFILE_ECO;
+               setPerformanceModeActive(4);
+               break;
             case MODE_BATTERY_SAVER:
                 thermalValue = POWERPROFILE_BATTERY_SAVER;
                 setPerformanceModeActive(0);
@@ -191,6 +200,12 @@ public class PowerProfileUtil {
         int currentMode = getManagedMode();
         int newMode;
         switch (currentMode) {
+            case MODE_BATTERY_SAVER:
+                newMode = MODE_ECO;
+                break;
+            case MODE_ECO:
+                newMode = MODE_BALANCE;
+                break;
             case MODE_BALANCE:
                 newMode = MODE_GAMING;
                 break;
@@ -198,16 +213,14 @@ public class PowerProfileUtil {
                 newMode = MODE_PERFORMANCE;
                 break;
             case MODE_PERFORMANCE:
-                newMode = MODE_BATTERY_SAVER;
-                break;
-            case MODE_BATTERY_SAVER:
             default:
-                newMode = MODE_BALANCE;
+                newMode = MODE_BATTERY_SAVER;
                 break;
         }
         Log.d(TAG, "Toggling mode: " + currentMode + " -> " + newMode);
         setMode(newMode);
     }
+
 
     private void optimizeGameLaunch() {
         ActivityManager activityManager = (ActivityManager) mContext.getSystemService(Context.ACTIVITY_SERVICE);

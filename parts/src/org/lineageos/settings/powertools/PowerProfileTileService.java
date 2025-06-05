@@ -91,6 +91,10 @@ public class PowerProfileTileService extends TileService {
                     tile.setState(Tile.STATE_INACTIVE);
                     tile.setIcon(Icon.createWithResource(this, R.drawable.ic_thermal_balance));
                     break;
+                case PowerProfileUtil.MODE_ECO:
+                    tile.setState(Tile.STATE_INACTIVE);
+                    tile.setIcon(Icon.createWithResource(this, R.drawable.ic_thermal_eco));
+                    break;
                 case PowerProfileUtil.MODE_BATTERY_SAVER:
                     tile.setState(Tile.STATE_INACTIVE);
                     tile.setIcon(Icon.createWithResource(this, R.drawable.ic_thermal_battery_saver));

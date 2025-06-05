@@ -348,6 +348,7 @@
          <item>Balanced</item>
          <item>Gaming</item>
          <item>Performance</item>
+         <item>Eco</item>
          <item>Battery Saver</item>
          <item>Unknown</item>
     </string-array>
@@ -357,6 +358,7 @@
          <item>2</item>
          <item>3</item>
          <item>4</item>
+         <item>5</item>
     </string-array>
 
 </resources>

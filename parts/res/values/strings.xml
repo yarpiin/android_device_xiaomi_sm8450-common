@@ -112,6 +112,7 @@
     <string name="powerprofile_tile_label">Power Profile</string>
     <string name="powerprofile_mode_balance">Balanced</string>
     <string name="powerprofile_mode_performance">Performance</string>
+    <string name="powerprofile_mode_eco">Eco</string>
     <string name="powerprofile_mode_battery_saver">Battery Saver</string>
     <string name="powerprofile_mode_gaming">Gaming</string>
     <string name="powerprofile_mode_unknown">Unknown Mode</string>
